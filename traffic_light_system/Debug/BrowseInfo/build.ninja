@@ -1,0 +1,90 @@
+##IAR Ninja build file
+
+
+#Rules
+rule COMPILER_XCL
+  command = C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\common\bin\XclFileGenerator.exe $xclcommand -f "$rspfile_name"
+  description = IAR_NEW_TOOL+++COMPILER_XCL+++$in+++"C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\common\bin\XclFileGenerator.exe" $flags
+  rspfile = $rspfile_name
+  rspfile_content = $flags
+
+rule INDEXER
+  command = C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\common\bin\SourceIndexer.exe $flags
+  depfile = $out.dep
+  description = IAR_NEW_TOOL+++INDEXER+++$out+++"C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\common\bin\SourceIndexer.exe" $flags
+
+rule MAKEBROWSE
+  command = C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\common\bin\makeBrowseData.exe $flags
+  description = IAR_NEW_TOOL+++MAKEBROWSE+++$out+++"C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\common\bin\makeBrowseData.exe" $flags
+
+rule PDBLINK
+  command = C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\common\bin\PbdLink.exe $flags
+  description = IAR_NEW_TOOL+++PDBLINK+++$out+++"C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\common\bin\PbdLink.exe" $flags
+
+
+
+#Build steps
+build C$:\Users\KAYEG\Documents\ASU\FALL$ -$ 21$ -$ Term$ 7\Embedded\[5]$ IAR\project_V3_Jan_10\Debug\BrowseInfo\btn_lib.xcl : COMPILER_XCL 
+  xclcommand = -source_file "C$:\Users\KAYEG\Documents\ASU\FALL$ -$ 21$ -$ Term$ 7\Embedded\[5]$ IAR\project_V3_Jan_10\btn_lib.c" -xcl_file "C$:\Users\KAYEG\Documents\ASU\FALL$ -$ 21$ -$ Term$ 7\Embedded\[5]$ IAR\project_V3_Jan_10\Debug\BrowseInfo\btn_lib.xcl" -macro_file "C$:\Users\KAYEG\Documents\ASU\FALL$ -$ 21$ -$ Term$ 7\Embedded\[5]$ IAR\project_V3_Jan_10\Debug\BrowseInfo\btn_lib.tmp" -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\bin\iccarm.exe"
+  flags = "C$:\Users\KAYEG\Documents\ASU\FALL$ -$ 21$ -$ Term$ 7\Embedded\[5]$ IAR\project_V3_Jan_10\btn_lib.c" -D ewarm -D PART_TM4C123GH6PM -D TARGET_IS_TM4C123_RB1 -o "C$:\Users\KAYEG\Documents\ASU\FALL$ -$ 21$ -$ Term$ 7\Embedded\[5]$ IAR\project_V3_Jan_10\Debug\Obj\\" --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\inc\c\DLib_Config_Normal.h" -I C$:\ti\TivaWare_C_Series-2.2.0.295\ -On --predef_macros "C$:\Users\KAYEG\Documents\ASU\FALL$ -$ 21$ -$ Term$ 7\Embedded\[5]$ IAR\project_V3_Jan_10\Debug\BrowseInfo\btn_lib.tmp"
+  rspfile_name = C$:\Users\KAYEG\Documents\ASU\FALL$ -$ 21$ -$ Term$ 7\Embedded\[5]$ IAR\project_V3_Jan_10\Debug\BrowseInfo\btn_lib.xcl.rsp
+
+build C$:\Users\KAYEG\Documents\ASU\FALL$ -$ 21$ -$ Term$ 7\Embedded\[5]$ IAR\project_V3_Jan_10\Debug\BrowseInfo\light_controller.xcl : COMPILER_XCL 
+  xclcommand = -source_file "C$:\Users\KAYEG\Documents\ASU\FALL$ -$ 21$ -$ Term$ 7\Embedded\[5]$ IAR\project_V3_Jan_10\light_controller.c" -xcl_file "C$:\Users\KAYEG\Documents\ASU\FALL$ -$ 21$ -$ Term$ 7\Embedded\[5]$ IAR\project_V3_Jan_10\Debug\BrowseInfo\light_controller.xcl" -macro_file "C$:\Users\KAYEG\Documents\ASU\FALL$ -$ 21$ -$ Term$ 7\Embedded\[5]$ IAR\project_V3_Jan_10\Debug\BrowseInfo\light_controller.tmp" -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\bin\iccarm.exe"
+  flags = "C$:\Users\KAYEG\Documents\ASU\FALL$ -$ 21$ -$ Term$ 7\Embedded\[5]$ IAR\project_V3_Jan_10\light_controller.c" -D ewarm -D PART_TM4C123GH6PM -D TARGET_IS_TM4C123_RB1 -o "C$:\Users\KAYEG\Documents\ASU\FALL$ -$ 21$ -$ Term$ 7\Embedded\[5]$ IAR\project_V3_Jan_10\Debug\Obj\\" --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\inc\c\DLib_Config_Normal.h" -I C$:\ti\TivaWare_C_Series-2.2.0.295\ -On --predef_macros "C$:\Users\KAYEG\Documents\ASU\FALL$ -$ 21$ -$ Term$ 7\Embedded\[5]$ IAR\project_V3_Jan_10\Debug\BrowseInfo\light_controller.tmp"
+  rspfile_name = C$:\Users\KAYEG\Documents\ASU\FALL$ -$ 21$ -$ Term$ 7\Embedded\[5]$ IAR\project_V3_Jan_10\Debug\BrowseInfo\light_controller.xcl.rsp
+
+build C$:\Users\KAYEG\Documents\ASU\FALL$ -$ 21$ -$ Term$ 7\Embedded\[5]$ IAR\project_V3_Jan_10\Debug\BrowseInfo\main.xcl : COMPILER_XCL 
+  xclcommand = -source_file "C$:\Users\KAYEG\Documents\ASU\FALL$ -$ 21$ -$ Term$ 7\Embedded\[5]$ IAR\project_V3_Jan_10\main.c" -xcl_file "C$:\Users\KAYEG\Documents\ASU\FALL$ -$ 21$ -$ Term$ 7\Embedded\[5]$ IAR\project_V3_Jan_10\Debug\BrowseInfo\main.xcl" -macro_file "C$:\Users\KAYEG\Documents\ASU\FALL$ -$ 21$ -$ Term$ 7\Embedded\[5]$ IAR\project_V3_Jan_10\Debug\BrowseInfo\main.tmp" -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\bin\iccarm.exe"
+  flags = "C$:\Users\KAYEG\Documents\ASU\FALL$ -$ 21$ -$ Term$ 7\Embedded\[5]$ IAR\project_V3_Jan_10\main.c" -D ewarm -D PART_TM4C123GH6PM -D TARGET_IS_TM4C123_RB1 -o "C$:\Users\KAYEG\Documents\ASU\FALL$ -$ 21$ -$ Term$ 7\Embedded\[5]$ IAR\project_V3_Jan_10\Debug\Obj\\" --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\inc\c\DLib_Config_Normal.h" -I C$:\ti\TivaWare_C_Series-2.2.0.295\ -On --predef_macros "C$:\Users\KAYEG\Documents\ASU\FALL$ -$ 21$ -$ Term$ 7\Embedded\[5]$ IAR\project_V3_Jan_10\Debug\BrowseInfo\main.tmp"
+  rspfile_name = C$:\Users\KAYEG\Documents\ASU\FALL$ -$ 21$ -$ Term$ 7\Embedded\[5]$ IAR\project_V3_Jan_10\Debug\BrowseInfo\main.xcl.rsp
+
+build C$:\Users\KAYEG\Documents\ASU\FALL$ -$ 21$ -$ Term$ 7\Embedded\[5]$ IAR\project_V3_Jan_10\Debug\BrowseInfo\state_machines.xcl : COMPILER_XCL 
+  xclcommand = -source_file "C$:\Users\KAYEG\Documents\ASU\FALL$ -$ 21$ -$ Term$ 7\Embedded\[5]$ IAR\project_V3_Jan_10\state_machines.c" -xcl_file "C$:\Users\KAYEG\Documents\ASU\FALL$ -$ 21$ -$ Term$ 7\Embedded\[5]$ IAR\project_V3_Jan_10\Debug\BrowseInfo\state_machines.xcl" -macro_file "C$:\Users\KAYEG\Documents\ASU\FALL$ -$ 21$ -$ Term$ 7\Embedded\[5]$ IAR\project_V3_Jan_10\Debug\BrowseInfo\state_machines.tmp" -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\bin\iccarm.exe"
+  flags = "C$:\Users\KAYEG\Documents\ASU\FALL$ -$ 21$ -$ Term$ 7\Embedded\[5]$ IAR\project_V3_Jan_10\state_machines.c" -D ewarm -D PART_TM4C123GH6PM -D TARGET_IS_TM4C123_RB1 -o "C$:\Users\KAYEG\Documents\ASU\FALL$ -$ 21$ -$ Term$ 7\Embedded\[5]$ IAR\project_V3_Jan_10\Debug\Obj\\" --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\inc\c\DLib_Config_Normal.h" -I C$:\ti\TivaWare_C_Series-2.2.0.295\ -On --predef_macros "C$:\Users\KAYEG\Documents\ASU\FALL$ -$ 21$ -$ Term$ 7\Embedded\[5]$ IAR\project_V3_Jan_10\Debug\BrowseInfo\state_machines.tmp"
+  rspfile_name = C$:\Users\KAYEG\Documents\ASU\FALL$ -$ 21$ -$ Term$ 7\Embedded\[5]$ IAR\project_V3_Jan_10\Debug\BrowseInfo\state_machines.xcl.rsp
+
+build C$:\Users\KAYEG\Documents\ASU\FALL$ -$ 21$ -$ Term$ 7\Embedded\[5]$ IAR\project_V3_Jan_10\Debug\BrowseInfo\timer_lib.xcl : COMPILER_XCL 
+  xclcommand = -source_file "C$:\Users\KAYEG\Documents\ASU\FALL$ -$ 21$ -$ Term$ 7\Embedded\[5]$ IAR\project_V3_Jan_10\timer_lib.c" -xcl_file "C$:\Users\KAYEG\Documents\ASU\FALL$ -$ 21$ -$ Term$ 7\Embedded\[5]$ IAR\project_V3_Jan_10\Debug\BrowseInfo\timer_lib.xcl" -macro_file "C$:\Users\KAYEG\Documents\ASU\FALL$ -$ 21$ -$ Term$ 7\Embedded\[5]$ IAR\project_V3_Jan_10\Debug\BrowseInfo\timer_lib.tmp" -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\bin\iccarm.exe"
+  flags = "C$:\Users\KAYEG\Documents\ASU\FALL$ -$ 21$ -$ Term$ 7\Embedded\[5]$ IAR\project_V3_Jan_10\timer_lib.c" -D ewarm -D PART_TM4C123GH6PM -D TARGET_IS_TM4C123_RB1 -o "C$:\Users\KAYEG\Documents\ASU\FALL$ -$ 21$ -$ Term$ 7\Embedded\[5]$ IAR\project_V3_Jan_10\Debug\Obj\\" --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\inc\c\DLib_Config_Normal.h" -I C$:\ti\TivaWare_C_Series-2.2.0.295\ -On --predef_macros "C$:\Users\KAYEG\Documents\ASU\FALL$ -$ 21$ -$ Term$ 7\Embedded\[5]$ IAR\project_V3_Jan_10\Debug\BrowseInfo\timer_lib.tmp"
+  rspfile_name = C$:\Users\KAYEG\Documents\ASU\FALL$ -$ 21$ -$ Term$ 7\Embedded\[5]$ IAR\project_V3_Jan_10\Debug\BrowseInfo\timer_lib.xcl.rsp
+
+build C$:\Users\KAYEG\Documents\ASU\FALL$ -$ 21$ -$ Term$ 7\Embedded\[5]$ IAR\project_V3_Jan_10\Debug\BrowseInfo\btn_lib.pbi : INDEXER C$:\Users\KAYEG\Documents\ASU\FALL$ -$ 21$ -$ Term$ 7\Embedded\[5]$ IAR\project_V3_Jan_10\Debug\BrowseInfo\btn_lib.xcl |  $
+C$:\Users\KAYEG\Documents\ASU\FALL$ -$ 21$ -$ Term$ 7\Embedded\[5]$ IAR\project_V3_Jan_10\btn_lib.c
+  flags = "-out=C$:\Users\KAYEG\Documents\ASU\FALL$ -$ 21$ -$ Term$ 7\Embedded\[5]$ IAR\project_V3_Jan_10\Debug\BrowseInfo\btn_lib.pbi" -f "C$:\Users\KAYEG\Documents\ASU\FALL$ -$ 21$ -$ Term$ 7\Embedded\[5]$ IAR\project_V3_Jan_10\Debug\BrowseInfo\btn_lib.xcl"
+
+build C$:\Users\KAYEG\Documents\ASU\FALL$ -$ 21$ -$ Term$ 7\Embedded\[5]$ IAR\project_V3_Jan_10\Debug\BrowseInfo\light_controller.pbi : INDEXER C$:\Users\KAYEG\Documents\ASU\FALL$ -$ 21$ -$ Term$ 7\Embedded\[5]$ IAR\project_V3_Jan_10\Debug\BrowseInfo\light_controller.xcl |  $
+C$:\Users\KAYEG\Documents\ASU\FALL$ -$ 21$ -$ Term$ 7\Embedded\[5]$ IAR\project_V3_Jan_10\light_controller.c
+  flags = "-out=C$:\Users\KAYEG\Documents\ASU\FALL$ -$ 21$ -$ Term$ 7\Embedded\[5]$ IAR\project_V3_Jan_10\Debug\BrowseInfo\light_controller.pbi" -f "C$:\Users\KAYEG\Documents\ASU\FALL$ -$ 21$ -$ Term$ 7\Embedded\[5]$ IAR\project_V3_Jan_10\Debug\BrowseInfo\light_controller.xcl"
+
+build C$:\Users\KAYEG\Documents\ASU\FALL$ -$ 21$ -$ Term$ 7\Embedded\[5]$ IAR\project_V3_Jan_10\Debug\BrowseInfo\main.pbi : INDEXER C$:\Users\KAYEG\Documents\ASU\FALL$ -$ 21$ -$ Term$ 7\Embedded\[5]$ IAR\project_V3_Jan_10\Debug\BrowseInfo\main.xcl |  $
+C$:\Users\KAYEG\Documents\ASU\FALL$ -$ 21$ -$ Term$ 7\Embedded\[5]$ IAR\project_V3_Jan_10\main.c
+  flags = "-out=C$:\Users\KAYEG\Documents\ASU\FALL$ -$ 21$ -$ Term$ 7\Embedded\[5]$ IAR\project_V3_Jan_10\Debug\BrowseInfo\main.pbi" -f "C$:\Users\KAYEG\Documents\ASU\FALL$ -$ 21$ -$ Term$ 7\Embedded\[5]$ IAR\project_V3_Jan_10\Debug\BrowseInfo\main.xcl"
+
+build C$:\Users\KAYEG\Documents\ASU\FALL$ -$ 21$ -$ Term$ 7\Embedded\[5]$ IAR\project_V3_Jan_10\Debug\BrowseInfo\state_machines.pbi : INDEXER C$:\Users\KAYEG\Documents\ASU\FALL$ -$ 21$ -$ Term$ 7\Embedded\[5]$ IAR\project_V3_Jan_10\Debug\BrowseInfo\state_machines.xcl |  $
+C$:\Users\KAYEG\Documents\ASU\FALL$ -$ 21$ -$ Term$ 7\Embedded\[5]$ IAR\project_V3_Jan_10\state_machines.c
+  flags = "-out=C$:\Users\KAYEG\Documents\ASU\FALL$ -$ 21$ -$ Term$ 7\Embedded\[5]$ IAR\project_V3_Jan_10\Debug\BrowseInfo\state_machines.pbi" -f "C$:\Users\KAYEG\Documents\ASU\FALL$ -$ 21$ -$ Term$ 7\Embedded\[5]$ IAR\project_V3_Jan_10\Debug\BrowseInfo\state_machines.xcl"
+
+build C$:\Users\KAYEG\Documents\ASU\FALL$ -$ 21$ -$ Term$ 7\Embedded\[5]$ IAR\project_V3_Jan_10\Debug\BrowseInfo\timer_lib.pbi : INDEXER C$:\Users\KAYEG\Documents\ASU\FALL$ -$ 21$ -$ Term$ 7\Embedded\[5]$ IAR\project_V3_Jan_10\Debug\BrowseInfo\timer_lib.xcl |  $
+C$:\Users\KAYEG\Documents\ASU\FALL$ -$ 21$ -$ Term$ 7\Embedded\[5]$ IAR\project_V3_Jan_10\timer_lib.c
+  flags = "-out=C$:\Users\KAYEG\Documents\ASU\FALL$ -$ 21$ -$ Term$ 7\Embedded\[5]$ IAR\project_V3_Jan_10\Debug\BrowseInfo\timer_lib.pbi" -f "C$:\Users\KAYEG\Documents\ASU\FALL$ -$ 21$ -$ Term$ 7\Embedded\[5]$ IAR\project_V3_Jan_10\Debug\BrowseInfo\timer_lib.xcl"
+
+build C$:\Users\KAYEG\Documents\ASU\FALL$ -$ 21$ -$ Term$ 7\Embedded\[5]$ IAR\project_V3_Jan_10\Debug\BrowseInfo\traffic_light_system.pbw : MAKEBROWSE C$:\Users\KAYEG\Documents\ASU\FALL$ -$ 21$ -$ Term$ 7\Embedded\[5]$ IAR\project_V3_Jan_10\Debug\BrowseInfo\traffic_light_system.pbd
+  flags = "C$:\Users\KAYEG\Documents\ASU\FALL$ -$ 21$ -$ Term$ 7\Embedded\[5]$ IAR\project_V3_Jan_10\Debug\BrowseInfo\traffic_light_system.pbd" -output "C$:\Users\KAYEG\Documents\ASU\FALL$ -$ 21$ -$ Term$ 7\Embedded\[5]$ IAR\project_V3_Jan_10\Debug\BrowseInfo\traffic_light_system.pbw"
+
+build C$:\Users\KAYEG\Documents\ASU\FALL$ -$ 21$ -$ Term$ 7\Embedded\[5]$ IAR\project_V3_Jan_10\Debug\BrowseInfo\traffic_light_system_part0.pbi : PDBLINK C$:\Users\KAYEG\Documents\ASU\FALL$ -$ 21$ -$ Term$ 7\Embedded\[5]$ IAR\project_V3_Jan_10\Debug\BrowseInfo\btn_lib.pbi |  $
+C$:\Users\KAYEG\Documents\ASU\FALL$ -$ 21$ -$ Term$ 7\Embedded\[5]$ IAR\project_V3_Jan_10\Debug\BrowseInfo\light_controller.pbi
+  flags = -M "C$:\Users\KAYEG\Documents\ASU\FALL$ -$ 21$ -$ Term$ 7\Embedded\[5]$ IAR\project_V3_Jan_10\Debug\BrowseInfo\traffic_light_system_part0.pbi" "C$:\Users\KAYEG\Documents\ASU\FALL$ -$ 21$ -$ Term$ 7\Embedded\[5]$ IAR\project_V3_Jan_10\Debug\BrowseInfo\btn_lib.pbi" "C$:\Users\KAYEG\Documents\ASU\FALL$ -$ 21$ -$ Term$ 7\Embedded\[5]$ IAR\project_V3_Jan_10\Debug\BrowseInfo\light_controller.pbi"
+
+build C$:\Users\KAYEG\Documents\ASU\FALL$ -$ 21$ -$ Term$ 7\Embedded\[5]$ IAR\project_V3_Jan_10\Debug\BrowseInfo\traffic_light_system_part1.pbi : PDBLINK C$:\Users\KAYEG\Documents\ASU\FALL$ -$ 21$ -$ Term$ 7\Embedded\[5]$ IAR\project_V3_Jan_10\Debug\BrowseInfo\main.pbi |  $
+C$:\Users\KAYEG\Documents\ASU\FALL$ -$ 21$ -$ Term$ 7\Embedded\[5]$ IAR\project_V3_Jan_10\Debug\BrowseInfo\state_machines.pbi
+  flags = -M "C$:\Users\KAYEG\Documents\ASU\FALL$ -$ 21$ -$ Term$ 7\Embedded\[5]$ IAR\project_V3_Jan_10\Debug\BrowseInfo\traffic_light_system_part1.pbi" "C$:\Users\KAYEG\Documents\ASU\FALL$ -$ 21$ -$ Term$ 7\Embedded\[5]$ IAR\project_V3_Jan_10\Debug\BrowseInfo\main.pbi" "C$:\Users\KAYEG\Documents\ASU\FALL$ -$ 21$ -$ Term$ 7\Embedded\[5]$ IAR\project_V3_Jan_10\Debug\BrowseInfo\state_machines.pbi"
+
+build C$:\Users\KAYEG\Documents\ASU\FALL$ -$ 21$ -$ Term$ 7\Embedded\[5]$ IAR\project_V3_Jan_10\Debug\BrowseInfo\traffic_light_system_part2.pbi : PDBLINK C$:\Users\KAYEG\Documents\ASU\FALL$ -$ 21$ -$ Term$ 7\Embedded\[5]$ IAR\project_V3_Jan_10\Debug\BrowseInfo\timer_lib.pbi
+  flags = -M "C$:\Users\KAYEG\Documents\ASU\FALL$ -$ 21$ -$ Term$ 7\Embedded\[5]$ IAR\project_V3_Jan_10\Debug\BrowseInfo\traffic_light_system_part2.pbi" "C$:\Users\KAYEG\Documents\ASU\FALL$ -$ 21$ -$ Term$ 7\Embedded\[5]$ IAR\project_V3_Jan_10\Debug\BrowseInfo\timer_lib.pbi"
+
+build C$:\Users\KAYEG\Documents\ASU\FALL$ -$ 21$ -$ Term$ 7\Embedded\[5]$ IAR\project_V3_Jan_10\Debug\BrowseInfo\traffic_light_system.pbd : PDBLINK C$:\Users\KAYEG\Documents\ASU\FALL$ -$ 21$ -$ Term$ 7\Embedded\[5]$ IAR\project_V3_Jan_10\Debug\BrowseInfo\traffic_light_system_part0.pbi |  $
+C$:\Users\KAYEG\Documents\ASU\FALL$ -$ 21$ -$ Term$ 7\Embedded\[5]$ IAR\project_V3_Jan_10\Debug\BrowseInfo\traffic_light_system_part1.pbi $
+C$:\Users\KAYEG\Documents\ASU\FALL$ -$ 21$ -$ Term$ 7\Embedded\[5]$ IAR\project_V3_Jan_10\Debug\BrowseInfo\traffic_light_system_part2.pbi
+  flags = -M "C$:\Users\KAYEG\Documents\ASU\FALL$ -$ 21$ -$ Term$ 7\Embedded\[5]$ IAR\project_V3_Jan_10\Debug\BrowseInfo\traffic_light_system.pbd" "C$:\Users\KAYEG\Documents\ASU\FALL$ -$ 21$ -$ Term$ 7\Embedded\[5]$ IAR\project_V3_Jan_10\Debug\BrowseInfo\traffic_light_system_part0.pbi" "C$:\Users\KAYEG\Documents\ASU\FALL$ -$ 21$ -$ Term$ 7\Embedded\[5]$ IAR\project_V3_Jan_10\Debug\BrowseInfo\traffic_light_system_part1.pbi" "C$:\Users\KAYEG\Documents\ASU\FALL$ -$ 21$ -$ Term$ 7\Embedded\[5]$ IAR\project_V3_Jan_10\Debug\BrowseInfo\traffic_light_system_part2.pbi"
+

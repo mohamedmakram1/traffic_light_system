@@ -1,0 +1,333 @@
+###############################################################################
+#
+# IAR ELF Linker V9.10.2.313/W64 for ARM                  13/Jan/2022  23:25:48
+# Copyright 2007-2021 IAR Systems AB.
+#
+#    Output file  =
+#        C:\Users\KAYEG\Documents\ASU\FALL - 21 - Term 7\Embedded\[5]
+#        IAR\project_V3_Jan_10\Debug\Exe\traffic_light_system.out
+#    Map file     =
+#        C:\Users\KAYEG\Documents\ASU\FALL - 21 - Term 7\Embedded\[5]
+#        IAR\project_V3_Jan_10\Debug\List\traffic_light_system.map
+#    Command line =
+#        -f "C:\Users\KAYEG\Documents\ASU\FALL - 21 - Term 7\Embedded\[5]
+#        IAR\project_V3_Jan_10\Debug\Exe\traffic_light_system.out.rsp"
+#        ("C:\Users\KAYEG\Documents\ASU\FALL - 21 - Term 7\Embedded\[5]
+#        IAR\project_V3_Jan_10\Debug\Obj\btn_lib.o"
+#        "C:\Users\KAYEG\Documents\ASU\FALL - 21 - Term 7\Embedded\[5]
+#        IAR\project_V3_Jan_10\Debug\Obj\light_controller.o"
+#        "C:\Users\KAYEG\Documents\ASU\FALL - 21 - Term 7\Embedded\[5]
+#        IAR\project_V3_Jan_10\Debug\Obj\main.o"
+#        "C:\Users\KAYEG\Documents\ASU\FALL - 21 - Term 7\Embedded\[5]
+#        IAR\project_V3_Jan_10\Debug\Obj\state_machines.o"
+#        "C:\Users\KAYEG\Documents\ASU\FALL - 21 - Term 7\Embedded\[5]
+#        IAR\project_V3_Jan_10\Debug\Obj\timer_lib.o" --no_out_extension -o
+#        "C:\Users\KAYEG\Documents\ASU\FALL - 21 - Term 7\Embedded\[5]
+#        IAR\project_V3_Jan_10\Debug\Exe\traffic_light_system.out" --map
+#        "C:\Users\KAYEG\Documents\ASU\FALL - 21 - Term 7\Embedded\[5]
+#        IAR\project_V3_Jan_10\Debug\List\traffic_light_system.map" --config
+#        "C:\Program Files\IAR Systems\Embedded Workbench
+#        9.0\arm\config\linker\TexasInstruments\TM4C123GH6.icf" --semihosting
+#        C:\ti\TivaWare_C_Series-2.2.0.295\driverlib\ewarm\Exe\driverlib.a
+#        --entry __iar_program_start --vfe --text_out locale)
+#
+###############################################################################
+
+*******************************************************************************
+*** MESSAGES
+***
+
+Warning[Lt009]: Inconsistent wchar_t size
+            gpio.o(driverlib.a) and 4 other objects in driverlib.a have wchar_t
+                      size 16 bits
+            btn_lib.o and 17 other objects, some of them in dl7M_tln.a and 11
+                      other libraries have wchar_t size 32 bits
+
+
+*******************************************************************************
+*** RUNTIME MODEL ATTRIBUTES
+***
+
+CppFlavor       = *
+__SystemLibrary = DLib
+__dlib_version  = 6
+
+
+*******************************************************************************
+*** HEAP SELECTION
+***
+
+The basic heap was selected because some modules are built with
+size limitations (and not runtime checking), and --advanced_heap
+was not specified.
+
+
+*******************************************************************************
+*** PLACEMENT SUMMARY
+***
+
+"A0":  place at address 0x0 { ro section .intvec };
+"P1":  place in [from 0x0 to 0x3'ffff] { ro };
+define block CSTACK with size = 4K, alignment = 8 { };
+define block HEAP with size = 8K, alignment = 8 { };
+"P2":  place in [from 0x2000'0000 to 0x2000'7fff] {
+          rw, block CSTACK, block HEAP };
+initialize by copy { rw };
+
+  Section            Kind         Address    Size  Object
+  -------            ----         -------    ----  ------
+"A0":                                        0x40
+  .intvec            ro code          0x0    0x40  vector_table_M.o [5]
+                                   - 0x40    0x40
+
+"P1":                                      0x118c
+  .text              ro code         0x40   0x458  gpio.o [3]
+  .text              ro code        0x498    0xa0  interrupt.o [3]
+  .text              ro code        0x538   0x24e  DblAddSub.o [4]
+  .text              ro code        0x786    0x2a  copy_init3.o [5]
+  .text              ro code        0x7b0   0x1b8  timer.o [3]
+  .text              ro code        0x968   0x1aa  DblMul.o [4]
+  .text              ro code        0xb12     0x2  vectortrap_M.o [5]
+  .text              ro code        0xb14   0x17c  main.o [1]
+  .text              ro code        0xc90    0x88  light_controller.o [1]
+  .text              ro code        0xd18   0x174  timer_lib.o [1]
+  .text              ro code        0xe8c    0xb4  btn_lib.o [1]
+  .text              ro code        0xf40    0xf8  state_machines.o [1]
+  .text              ro code       0x1038    0x44  sysctl.o [3]
+  .text              ro code       0x107c    0x1c  U32ToDbl.o [4]
+  .text              ro code       0x1098    0x22  DblToU32.o [4]
+  .text              ro code       0x10ba    0x38  zero_init3.o [5]
+  .text              ro code       0x10f4    0x28  data_init.o [5]
+  .text              ro code       0x111c    0x22  fpinit_M.o [4]
+  .iar.init_table    const         0x1140    0x24  - Linker created -
+  .text              ro code       0x1164    0x1e  cmain.o [5]
+  .text              ro code       0x1182     0x4  low_level_init.o [2]
+  .text              ro code       0x1186     0x4  exit.o [2]
+  .text              ro code       0x118c     0xa  cexit.o [5]
+  .text              ro code       0x1198    0x14  exit.o [6]
+  .text              ro code       0x11ac    0x1c  cstartup_M.o [5]
+  Initializer bytes  const         0x11c8     0x4  <for P2-1>
+  .rodata            const         0x11cc     0x0  zero_init3.o [5]
+  .rodata            const         0x11cc     0x0  copy_init3.o [5]
+                                 - 0x11cc  0x118c
+
+"P2", part 1 of 3:                            0x4
+  P2-1                        0x2000'0000     0x2  <Init block>
+    .data            inited   0x2000'0000     0x2  state_machines.o [1]
+                            - 0x2000'0002     0x2
+
+"P2", part 2 of 3:                          0x66c
+  VTABLE             zero     0x2000'0400   0x26c  interrupt.o [3]
+  .bss               zero     0x2000'066c     0x1  state_machines.o [1]
+  .bss               zero     0x2000'066d     0x1  state_machines.o [1]
+  .bss               zero     0x2000'066e     0x1  state_machines.o [1]
+  .bss               zero     0x2000'066f     0x1  state_machines.o [1]
+                            - 0x2000'0670   0x66c
+
+"P2", part 3 of 3:                         0x1000
+  CSTACK                      0x2000'0670  0x1000  <Block>
+    CSTACK           uninit   0x2000'0670  0x1000  <Block tail>
+                            - 0x2000'1670  0x1000
+
+Unused ranges:
+
+         From           To      Size
+         ----           --      ----
+       0x11cc     0x3'ffff  0x3'ee34
+  0x2000'1670  0x2000'7fff    0x6990
+
+
+*******************************************************************************
+*** INIT TABLE
+***
+
+          Address      Size
+          -------      ----
+Zero (__iar_zero_init3)
+    1 destination range, total size 0x270:
+          0x2000'0400  0x270
+
+Copy (__iar_copy_init3)
+    1 source range, total size 0x4 (200% of destination):
+               0x11c8    0x4
+    1 destination range, total size 0x2:
+          0x2000'0000    0x2
+
+
+
+*******************************************************************************
+*** MODULE SUMMARY
+***
+
+    Module              ro code  ro data  rw data
+    ------              -------  -------  -------
+command line/config:
+    ---------------------------------------------
+    Total:
+
+C:\Users\KAYEG\Documents\ASU\FALL - 21 - Term 7\Embedded\[5] IAR\project_V3_Jan_10\Debug\Obj: [1]
+    btn_lib.o               180
+    light_controller.o      136
+    main.o                  380
+    state_machines.o        248        2        6
+    timer_lib.o             372
+    ---------------------------------------------
+    Total:                1'316        2        6
+
+dl7M_tln.a: [2]
+    exit.o                    4
+    low_level_init.o          4
+    ---------------------------------------------
+    Total:                    8
+
+driverlib.a: [3]
+    gpio.o                1'112
+    interrupt.o             160               620
+    sysctl.o                 68
+    timer.o                 440
+    ---------------------------------------------
+    Total:                1'780               620
+
+m7M_tls.a: [4]
+    DblAddSub.o             590
+    DblMul.o                426
+    DblToU32.o               34
+    U32ToDbl.o               28
+    fpinit_M.o               34
+    ---------------------------------------------
+    Total:                1'112
+
+rt7M_tl.a: [5]
+    cexit.o                  10
+    cmain.o                  30
+    copy_init3.o             42
+    cstartup_M.o             28
+    data_init.o              40
+    vector_table_M.o         64
+    vectortrap_M.o            2
+    zero_init3.o             56
+    ---------------------------------------------
+    Total:                  272
+
+shb_l.a: [6]
+    exit.o                   20
+    ---------------------------------------------
+    Total:                   20
+
+    Gaps                      6        2    1'020
+    Linker created                    38    4'096
+-------------------------------------------------
+    Grand Total:          4'514       42    5'742
+
+
+*******************************************************************************
+*** ENTRY LIST
+***
+
+Entry                       Address   Size  Type      Object
+-----                       -------   ----  ----      ------
+.iar.init_table$$Base        0x1140          --   Gb  - Linker created -
+.iar.init_table$$Limit       0x1164          --   Gb  - Linker created -
+?main                        0x1165         Code  Gb  cmain.o [5]
+BusFault_Handler              0xb13         Code  Wk  vectortrap_M.o [5]
+CSTACK$$Base            0x2000'0670          --   Gb  - Linker created -
+CSTACK$$Limit           0x2000'1670          --   Gb  - Linker created -
+DebugMon_Handler              0xb13         Code  Wk  vectortrap_M.o [5]
+GPIODirModeSet                 0x81   0x28  Code  Gb  gpio.o [3]
+GPIOIntClear                  0x275    0x6  Code  Gb  gpio.o [3]
+GPIOIntDisable                0x26f    0x6  Code  Gb  gpio.o [3]
+GPIOIntEnable                 0x269    0x6  Code  Gb  gpio.o [3]
+GPIOIntRegister               0x27b   0x14  Code  Gb  gpio.o [3]
+GPIOIntTypeSet                 0xa9   0x4c  Code  Gb  gpio.o [3]
+GPIOPadConfigSet               0xf5  0x174  Code  Gb  gpio.o [3]
+GPIOPinRead                   0x297    0x6  Code  Gb  gpio.o [3]
+GPIOPinTypeGPIOInput          0x2a7   0x14  Code  Gb  gpio.o [3]
+GPIOPinTypeGPIOOutput         0x2bb    0xa  Code  Gb  gpio.o [3]
+GPIOPinWrite                  0x29d    0x6  Code  Gb  gpio.o [3]
+HardFault_Handler             0xb13         Code  Wk  vectortrap_M.o [5]
+IntEnable                     0x4bf   0x56  Code  Gb  interrupt.o [3]
+IntRegister                   0x499   0x26  Code  Gb  interrupt.o [3]
+MemManage_Handler             0xb13         Code  Wk  vectortrap_M.o [5]
+NMI_Handler                   0xb13         Code  Wk  vectortrap_M.o [5]
+PendSV_Handler                0xb13         Code  Wk  vectortrap_M.o [5]
+Region$$Table$$Base          0x1140          --   Gb  - Linker created -
+Region$$Table$$Limit         0x1164          --   Gb  - Linker created -
+SM                            0xf41   0xf8  Code  Gb  state_machines.o [1]
+SVC_Handler                   0xb13         Code  Wk  vectortrap_M.o [5]
+SysCtlPeripheralEnable       0x1059    0x8  Code  Gb  sysctl.o [3]
+SysCtlPeripheralReady        0x1039    0x8  Code  Gb  sysctl.o [3]
+SysTick_Handler               0xb13         Code  Wk  vectortrap_M.o [5]
+TimerConfigure                0x80b   0x52  Code  Gb  timer.o [3]
+TimerControlStall             0x86d   0x18  Code  Gb  timer.o [3]
+TimerDisable                  0x7ff    0xc  Code  Gb  timer.o [3]
+TimerEnable                   0x7f3    0xc  Code  Gb  timer.o [3]
+TimerIntClear                 0x8c5    0x4  Code  Gb  timer.o [3]
+TimerIntDisable               0x8b9    0x4  Code  Gb  timer.o [3]
+TimerIntEnable                0x8af    0x4  Code  Gb  timer.o [3]
+TimerIntRegister              0x895   0x1a  Code  Gb  timer.o [3]
+TimerLoadSet                  0x885   0x10  Code  Gb  timer.o [3]
+UsageFault_Handler            0xb13         Code  Wk  vectortrap_M.o [5]
+_GPIOIntNumberGet              0x41   0x40  Code  Lc  gpio.o [3]
+_TimerIntNumberGet            0x7b1   0x42  Code  Lc  timer.o [3]
+__aeabi_d2uiz                0x1099         Code  Gb  DblToU32.o [4]
+__aeabi_dadd                  0x539         Code  Gb  DblAddSub.o [4]
+__aeabi_dmul                  0x969         Code  Gb  DblMul.o [4]
+__aeabi_ui2d                 0x107d         Code  Gb  U32ToDbl.o [4]
+__cmain                      0x1165         Code  Gb  cmain.o [5]
+__exit                       0x1199   0x14  Code  Gb  exit.o [6]
+__iar_copy_init3              0x787   0x2a  Code  Gb  copy_init3.o [5]
+__iar_data_init3             0x10f5   0x28  Code  Gb  data_init.o [5]
+__iar_init_vfp               0x111d         Code  Gb  fpinit_M.o [4]
+__iar_program_start          0x11ad         Code  Gb  cstartup_M.o [5]
+__iar_zero_init3             0x10bb   0x38  Code  Gb  zero_init3.o [5]
+__low_level_init             0x1183    0x4  Code  Gb  low_level_init.o [2]
+__vector_table                  0x0         Data  Gb  vector_table_M.o [5]
+_call_main                   0x1171         Code  Gb  cmain.o [5]
+_exit                        0x118d         Code  Gb  cexit.o [5]
+assign_btn_isr                0xeeb   0x28  Code  Gb  btn_lib.o [1]
+assign_isr                    0xde3   0x48  Code  Gb  timer_lib.o [1]
+begin_delay                   0xd7f   0x64  Code  Gb  timer_lib.o [1]
+btn_isr                       0xc21   0x54  Code  Gb  main.o [1]
+color                   0x2000'066f    0x1  Data  Gb  state_machines.o [1]
+cooldown                0x2000'066d    0x1  Data  Gb  state_machines.o [1]
+direction               0x2000'066e    0x1  Data  Gb  state_machines.o [1]
+directions              0x2000'0000    0x2  Data  Gb  state_machines.o [1]
+disable_btn_int               0xf13    0xc  Code  Gb  btn_lib.o [1]
+enable_btn_int                0xf1f    0xc  Code  Gb  btn_lib.o [1]
+exit                         0x1187    0x4  Code  Gb  exit.o [2]
+g_pfnRAMVectors         0x2000'0400  0x26c  Data  Lc  interrupt.o [3]
+g_ppui32GPIOIntMapBlizzard
+                              0x300   0xc0  Data  Lc  gpio.o [3]
+g_ppui32GPIOIntMapSnowflake
+                              0x3c0   0xd8  Data  Lc  gpio.o [3]
+g_ppui32TimerIntMap           0x8c8   0x60  Data  Lc  timer.o [3]
+g_ppui32TimerIntMapSnowflake
+                              0x928   0x40  Data  Lc  timer.o [3]
+g_pui32EnRegs                 0x524   0x14  Data  Lc  interrupt.o [3]
+init_btns                     0xe8d   0x3a  Code  Gb  btn_lib.o [1]
+init_port_B                   0xcad   0x1c  Code  Gb  light_controller.o [1]
+init_port_E                   0xc91   0x1c  Code  Gb  light_controller.o [1]
+init_timer                    0xd19   0x66  Code  Gb  timer_lib.o [1]
+main                          0xb15   0x82  Code  Gb  main.o [1]
+pause_timer                   0xe2b   0x26  Code  Gb  timer_lib.o [1]
+read_btn                      0xec7   0x24  Code  Gb  btn_lib.o [1]
+resume_timer                  0xe51   0x22  Code  Gb  timer_lib.o [1]
+set_TL_color                  0xcc9   0x40  Code  Gb  light_controller.o [1]
+state                   0x2000'066c    0x1  Data  Gb  state_machines.o [1]
+timer0_isr                    0xb99   0x5e  Code  Gb  main.o [1]
+timer1_isr                    0xbf9   0x26  Code  Gb  main.o [1]
+
+
+[1] = C:\Users\KAYEG\Documents\ASU\FALL - 21 - Term 7\Embedded\[5] IAR\project_V3_Jan_10\Debug\Obj
+[2] = dl7M_tln.a
+[3] = driverlib.a
+[4] = m7M_tls.a
+[5] = rt7M_tl.a
+[6] = shb_l.a
+
+  4'514 bytes of readonly  code memory
+     42 bytes of readonly  data memory
+  5'742 bytes of readwrite data memory
+
+Errors: none
+Warnings: 1
